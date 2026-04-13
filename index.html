@@ -428,6 +428,7 @@
       🔒 তোমাদের দেওয়া প্রতিটি তথ্য IVEST-র কাছে সুরক্ষিত থাকবে, এবং শুধুমাত্র IVEST-র তথ্যভাণ্ডার তৈরি ও তথ্য-বিশ্লেষণের কাজে ব্যবহৃত হবে।
     </div>
     <span class="multi-hint">⚠️ লাল চিহ্নিত প্রশ্নে একাধিক উত্তর বেছে নেওয়া যাবে</span>
+    <span class="multi-hint">  যোগাযোগ নাম্বার: +91 80164 40930</span>
 
     <div class="consent-row">
       <button class="consent-btn" id="btnYes" onclick="setConsent(true)">✅ ইচ্ছুক — সমীক্ষায় অংশ নেব</button>
@@ -477,7 +478,7 @@
           <input type="radio" name="marital" value="বিবাহিত" onchange="toggleSubfield('marriedYear', true)">
           বিবাহিত
           <div class="opt-subfield" id="marriedYear">
-            বিবাহের সাল: <input type="number" name="marriage_year" min="1990" max="2030" placeholder="যেমন: 2022" style="width:120px;">
+            বিবাহের সাল: <input type="number" name="marriage_year" min="1990" max="2026" placeholder="যেমন: 2022" style="width:120px;">
           </div>
         </label>
       </div>
@@ -499,19 +500,29 @@
     <div class="q-card">
       <label class="q-label"><span class="q-num">৫.</span> দুর্ভাগ্যবশত, যদি তোমার বাবা বা মা কেউ গত হয়েছেন বা চলে গেছেন</label>
       <div class="options-list">
-        <label class="opt-item"><input type="radio" name="parent_status" value="দুজনেই বেঁচে আছেন"> না, দুজনেই বেঁচে আছেন</label>
+        <label class="opt-item"><input type="radio" name="parent_status" value="দুজনেই বেঁচে আছেন" onchange="toggleSubfield('fatherYear', false); toggleSubfield('motherYear', false); toggleSubfield('bothYears', false)"> না, দুজনেই বেঁচে আছেন</label>
         <label class="opt-item">
-          <input type="radio" name="parent_status" value="বাবা" onchange="toggleSubfield('fatherYear', true); toggleSubfield('motherYear', false)">
+          <input type="radio" name="parent_status" value="বাবা" onchange="toggleSubfield('fatherYear', true); toggleSubfield('motherYear', false); toggleSubfield('bothYears', false)">
           তোমার বাবা
           <div class="opt-subfield" id="fatherYear">
-            উনি মারা/চলে গেছেন সালে: <input type="number" name="father_year" min="1960" max="2030" placeholder="বছর" style="width:110px;">
+            উনি মারা/চলে গেছেন সালে: <input type="number" name="father_year" min="1960" max="2026" placeholder="বছর" style="width:110px;">
           </div>
         </label>
         <label class="opt-item">
-          <input type="radio" name="parent_status" value="মা" onchange="toggleSubfield('motherYear', true); toggleSubfield('fatherYear', false)">
+          <input type="radio" name="parent_status" value="মা" onchange="toggleSubfield('motherYear', true); toggleSubfield('fatherYear', false); toggleSubfield('bothYears', false)">
           তোমার মা
           <div class="opt-subfield" id="motherYear">
-            উনি মারা/চলে গেছেন সালে: <input type="number" name="mother_year" min="1960" max="2030" placeholder="বছর" style="width:110px;">
+            উনি মারা/চলে গেছেন সালে: <input type="number" name="mother_year" min="1960" max="2026" placeholder="বছর" style="width:110px;">
+          </div>
+        </label>
+        <label class="opt-item">
+          <input type="radio" name="parent_status" value="দুজনেই গত হয়েছেন" onchange="toggleSubfield('bothYears', true); toggleSubfield('fatherYear', false); toggleSubfield('motherYear', false)">
+          বাবা ও মা দুজনেই গত হয়েছেন
+          <div class="opt-subfield" id="bothYears">
+            বাবা গত হয়েছেন সালে: <input type="number" name="father_year_both" min="1960" max="2026" placeholder="বছর" style="width:110px;">
+            <div style="margin-top:8px;">
+              মা গত হয়েছেন সালে: <input type="number" name="mother_year_both" min="1960" max="2026" placeholder="বছর" style="width:110px;">
+            </div>
           </div>
         </label>
       </div>
@@ -533,7 +544,12 @@
     <!-- Q7 DOB -->
     <div class="q-card">
       <label class="q-label"><span class="q-num">৭.</span> তোমার জন্ম তারিখ<span class="required-star">*</span></label>
-      <input type="date" name="dob" required style="max-width:220px;">
+      <div class="input-row-3" id="dob_wrap" style="max-width: 450px;">
+        <select class="d-day" name="dob_day" required><option value="">দিন</option></select>
+        <select class="d-month" name="dob_month" required><option value="">মাস</option></select>
+        <select class="d-year" name="dob_year" required><option value="">বছর</option></select>
+      </div>
+      <input type="hidden" name="dob" id="dob_hidden">
     </div>
 
     <!-- Q8 Address -->
@@ -685,7 +701,7 @@
 
     <!-- Q18 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">১৮.</span> উচ্চমাধ্যমিক পরীক্ষা ছাড়া আর কোন কোন কম্পিটিটিভ পরীক্ষা দিয়েছিলে/দেবে<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">১৮.</span> উচ্চমাধ্যমিক পরীক্ষা ছাড়া আর কোন কোন কম্পিটিটিভ পরীক্ষা দিয়েছিলে/দেবে<span class="multi-tag">একাধিক পরীক্ষা হলে, সবকটি উল্লেখ করো </span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="exam18" value="WBJEE"> WBJEE</label>
         <label class="opt-item"><input type="checkbox" name="exam18" value="JEE-MAIN"> JEE-MAIN</label>
@@ -722,7 +738,7 @@
 
     <!-- Q20 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২০.</span> উচ্চমাধ্যমিক পড়াকালীন তোমার পরিবারের আয়ের উৎসগুলি<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">২০.</span> উচ্চমাধ্যমিক পড়াকালীন তোমার পরিবারের আয়ের উৎসগুলি<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="income_src" value="চাকরি-স্থায়ী"> চাকরি — স্থায়ী কর্মচারী</label>
         <label class="opt-item"><input type="checkbox" name="income_src" value="চাকরি-কন্ট্রাকচুয়াল"> চাকরি — কন্ট্রাকচুয়াল</label>
@@ -752,7 +768,7 @@
 
     <!-- Q22 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২২.</span> উচ্চমাধ্যমিকে নিজ পরিবারের বাইরে থেকে কোনো আর্থিক সহায়তা পেয়েছিলে?<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">২২.</span> উচ্চমাধ্যমিকে নিজ পরিবারের বাইরে থেকে কোনো আর্থিক সহায়তা পেয়েছিলে?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="hs_aid" value="কিছুই পাই নি"> না, কিছুই পাই নি</label>
         <label class="opt-item"><input type="checkbox" name="hs_aid" value="IVEST নিয়মিত স্কলারশিপ"> হ্যাঁ, আমি IVEST থেকে নিয়মিত স্কলারশিপ পেয়েছি</label>
@@ -768,7 +784,7 @@
 
     <!-- Q23 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৩.</span> উচ্চমাধ্যমিকের পরে, উচ্চতর পড়াশোনার জন্য অন্য কোনো আর্থিক সহায়তা পেয়েছ / পাচ্ছ কি?<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">২৩.</span> উচ্চমাধ্যমিকের পরে, উচ্চতর পড়াশোনার জন্য অন্য কোনো আর্থিক সহায়তা পেয়েছ / পাচ্ছ কি?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="higher_aid" value="কিছুই না"> না, কিছুই না</label>
         <label class="opt-item"><input type="checkbox" name="higher_aid" value="IVEST নিয়মিত স্কলারশিপ"> হ্যাঁ, আমি IVEST থেকে নিয়মিত স্কলারশিপ পেয়েছি / পাচ্ছি</label>
@@ -790,7 +806,7 @@
 
     <!-- Q24 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৪.</span> উচ্চমাধ্যমিক চলাকালীন স্কুল শিক্ষকদের কাছ থেকে কতটা সহায়তা পেয়েছিলে?<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">২৪.</span> উচ্চমাধ্যমিক চলাকালীন স্কুল শিক্ষকদের কাছ থেকে কতটা সহায়তা পেয়েছিলে?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="teacher_support" value="ক্লাসের পড়ানো যথেষ্ট ছিল"> অধিকাংশ বিষয়ের জন্য ক্লাসের পড়ানোই যথেষ্ট ছিল</label>
         <label class="opt-item"><input type="checkbox" name="teacher_support" value="ক্লাস যথেষ্ট ছিল না"> অধিকাংশ বিষয়ের জন্য ক্লাসের পড়ানো যথেষ্ট ছিল না</label>
@@ -815,7 +831,7 @@
 
     <!-- Q26 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৬.</span> প্রাইভেট টুইশন কোথায় কোথায় থেকে নিয়েছিলে?<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">২৬.</span> প্রাইভেট টুইশন কোথায় কোথায় থেকে নিয়েছিলে?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="tuition_src" value="স্থানীয় কোচিং-ব্যক্তিগত শিক্ষক"> স্থানীয় কোচিং সেন্টার / ব্যক্তিগত শিক্ষকের বাড়ি</label>
         <label class="opt-item"><input type="checkbox" name="tuition_src" value="স্কুল শিক্ষকের মেস কোচিং"> স্কুল শিক্ষকদের পরিচালিত মেস-সহ কোচিং সেন্টার</label>
@@ -867,7 +883,7 @@
 
     <!-- Q28 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৮.</span> তুমি কি নীচের কম্পিটিটিভ পরীক্ষার জন্য প্রস্তুতি নিচ্ছ?<span class="multi-tag">একাধিক</span></label>
+      <label class="q-label"><span class="q-num">২৮.</span> তুমি কি নীচের কম্পিটিটিভ পরীক্ষার জন্য প্রস্তুতি নিচ্ছ?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="prep_exam" value="NEET"> NEET</label>
         <label class="opt-item"><input type="checkbox" name="prep_exam" value="WBJEE"> WBJEE</label>
@@ -908,7 +924,15 @@
             </div>
             <div class="sub-group"><span class="sub-label">Exam passed for this job</span><input type="text" name="job_exam" placeholder="যেমন: WBCS"></div>
             <div class="input-row">
-              <div class="sub-group"><span class="sub-label">Joining date</span><input type="date" name="job_joining"></div>
+              <div class="sub-group">
+                <span class="sub-label">Joining date</span>
+                <div class="input-row-3" id="job_joining_wrap">
+                  <select class="d-day" name="job_joining_day"><option value="">দিন</option></select>
+                  <select class="d-month" name="job_joining_month"><option value="">মাস</option></select>
+                  <select class="d-year" name="job_joining_year"><option value="">বছর</option></select>
+                </div>
+                <input type="hidden" name="job_joining" id="job_joining_hidden">
+              </div>
               <div class="sub-group"><span class="sub-label">Organisation name</span><input type="text" name="job_org"></div>
             </div>
             <div class="input-row">
@@ -958,7 +982,7 @@
 
 <script>
   // ── CONFIG ── Replace with your Apps Script Web App URL after deployment
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxirIcU2mqA6N_C_HcTy-GSBCxHCTeHqFfGkVcUtMpLvNpuK1R4ctrn04SibwUvJSl65g/exec";
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxldX25MdjvL_aXzjdL9tBgYKwOAwNpj-Qf7eykL1JihYpfUORoM8MkTjuzV2MGEHw7ug/exec";
 
   // Consent
   function setConsent(yes) {
@@ -1012,8 +1036,8 @@
     const form = document.getElementById('ivestForm');
     const data = {};
 
-    // Text/number/date/select/textarea
-    form.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], input[type="tel"], textarea, select').forEach(el => {
+    // Text/number/date/select/textarea/hidden
+    form.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], input[type="tel"], input[type="hidden"], textarea, select').forEach(el => {
       if (el.name) data[el.name] = el.value.trim();
     });
 
@@ -1082,6 +1106,51 @@
       banner.textContent = 'নেটওয়ার্ক সমস্যা হয়েছে। আবার চেষ্টা করো।';
     }
   }
+
+  // Populate DOB dropdowns & sync hidden field
+  (function() {
+    const enToBn = n => n.toString().replace(/\d/g, d => "০১২৩৪৫৬৭৮৯"[d]);
+    const months = [
+      ["01","জানুয়ারি"], ["02","ফেব্রুয়ারি"], ["03","মার্চ"], ["04","এপ্রিল"],
+      ["05","মে"], ["06","জুন"], ["07","জুলাই"], ["08","আগস্ট"],
+      ["09","সেপ্টেম্বর"], ["10","অক্টোবর"], ["11","নভেম্বর"], ["12","ডিসেম্বর"]
+    ];
+
+    function initDateGroup(wrapId, hiddenId, startYear, endYear) {
+      const wrap = document.getElementById(wrapId);
+      const hidden = document.getElementById(hiddenId);
+      if (!wrap || !hidden) return;
+
+      const dSel = wrap.querySelector('.d-day');
+      const mSel = wrap.querySelector('.d-month');
+      const ySel = wrap.querySelector('.d-year');
+
+      // Days 01-31
+      for (let i = 1; i <= 31; i++) {
+        const v = i.toString().padStart(2, '0');
+        dSel.add(new Option(enToBn(v), v));
+      }
+      // Months
+      months.forEach(m => mSel.add(new Option(m[1], m[0])));
+      // Years
+      for (let i = endYear; i >= startYear; i--) {
+        ySel.add(new Option(enToBn(i), i));
+      }
+
+      function sync() {
+        if (dSel.value && mSel.value && ySel.value) {
+          hidden.value = `${ySel.value}-${mSel.value}-${dSel.value}`;
+        } else {
+          hidden.value = "";
+        }
+        updateProgress();
+      }
+      [dSel, mSel, ySel].forEach(s => s.addEventListener('change', sync));
+    }
+
+    initDateGroup('dob_wrap', 'dob_hidden', 1980, 2026);
+    initDateGroup('job_joining_wrap', 'job_joining_hidden', 2000, 2026);
+  })();
 </script>
 </body>
 </html>
