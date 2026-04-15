@@ -408,9 +408,9 @@
 <body>
 
 <header class="site-header">
-  <div class="logo-mark">IV</div>
+  <div class="logo-mark">IVEST</div>
   <div>
-    <h1>IVEST Student Survey</h1>
+    <h1>IVEST Student Survey (Ishwarchandra Vidyasagar Education and Social Trust)</h1>
     <p>সকল ছাত্রছাত্রীর জন্য</p>
   </div>
 </header>
@@ -707,7 +707,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q17 Career plan -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">১৭.</span> HS পড়ার সময়, তুমি কোন পেশায় যাওয়ার জন্য ভবিষ্যত পরিকল্পনা করেছিলে?</label>
+      <label class="q-label"><span class="q-num">১৭.</span> উচ্চমাধ্যমিক পড়ার সময়, তুমি কোন পেশায় যাওয়ার জন্য ভবিষ্যত পরিকল্পনা করেছিলে/করছ</label>
       <div class="input-row">
         <div class="sub-group"><span class="sub-label">প্রথম পছন্দের পেশা</span><input type="text" name="career1" placeholder="যেমন: ডাক্তার"></div>
         <div class="sub-group"><span class="sub-label">দ্বিতীয় পছন্দের পেশা</span><input type="text" name="career2" placeholder="যেমন: শিক্ষক"></div>
@@ -722,7 +722,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q18 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">১৮.</span> উচ্চমাধ্যমিক পরীক্ষা ছাড়া আর কোন কোন কম্পিটিটিভ পরীক্ষা দিয়েছিলে/দেবে<span class="multi-tag">একাধিক পরীক্ষা হলে, সবকটি উল্লেখ করো </span></label>
+      <label class="q-label"><span class="q-num">১৮.</span> উচ্চমাধ্যমিক পরীক্ষা ছাড়া আর কোন কোন কম্পিটিটিভ পরীক্ষা দিয়েছিলে/দেবে<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="exam18" value="WBJEE"> WBJEE</label>
         <label class="opt-item"><input type="checkbox" name="exam18" value="JEE-MAIN"> JEE-MAIN</label>
@@ -919,7 +919,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q29 Employment -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৯.</span> তুমি কি চাকরি করছ?</label>
+      <label class="q-label"><span class="q-num">২৯.</span> তুমি কি এখন নিজে রোজগার করছো?</label>
       <div class="options-list">
         <label class="opt-item"><input type="radio" name="employed" value="না" onchange="toggleSubfield('jobSection', false); toggleSubfield('bizSection', false)"> না</label>
         <label class="opt-item">
@@ -947,10 +947,8 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
             <div class="input-row">
               <div class="sub-group">
                 <span class="sub-label">Joining date</span>
-                <div class="input-row-3" id="job_joining_wrap">
-                  <select class="d-day" name="job_joining_day"><option value="">দিন</option></select>
-                  <select class="d-month" name="job_joining_month"><option value="">মাস</option></select>
-                  <select class="d-year" name="job_joining_year"><option value="">বছর</option></select>
+                <div id="job_joining_wrap">
+                  <input class="d-year" type="number" name="job_joining_year" min="2000" max="2026" placeholder="বছর" inputmode="numeric">
                 </div>
                 <input type="hidden" name="job_joining" id="job_joining_hidden">
               </div>
@@ -965,7 +963,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
         </label>
         <label class="opt-item">
           <input type="radio" name="employed" value="হ্যাঁ-ব্যবসা" onchange="toggleSubfield('bizSection', true); toggleSubfield('jobSection', false)">
-          হ্যাঁ, ব্যবসা / স্বনিযুক্ত
+           হ্যাঁ,  ব্যবসা করছি / স্বনিযুক্ত পেশায় আছি
           <div class="opt-subfield" id="bizSection">
             <div class="sub-group"><span class="sub-label">Type of business/self-employment</span><input type="text" name="biz_type"></div>
             <div class="input-row">
@@ -1169,8 +1167,24 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
       [dSel, mSel, ySel].forEach(s => s.addEventListener('change', sync));
     }
 
+    function initYearField(wrapId, hiddenId) {
+      const wrap = document.getElementById(wrapId);
+      const hidden = document.getElementById(hiddenId);
+      if (!wrap || !hidden) return;
+
+      const yInput = wrap.querySelector('.d-year');
+      if (!yInput) return;
+
+      function sync() {
+        hidden.value = yInput.value.trim();
+        updateProgress();
+      }
+      yInput.addEventListener('input', sync);
+      yInput.addEventListener('change', sync);
+    }
+
     initDateGroup('dob_wrap', 'dob_hidden', 1980, 2026);
-    initDateGroup('job_joining_wrap', 'job_joining_hidden', 2000, 2026);
+    initYearField('job_joining_wrap', 'job_joining_hidden');
   })();
 </script>
 </body>
