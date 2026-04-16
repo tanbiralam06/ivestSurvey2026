@@ -449,7 +449,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
       🔒 তোমাদের দেওয়া প্রতিটি তথ্য IVEST-র কাছে সুরক্ষিত থাকবে, এবং শুধুমাত্র IVEST-র তথ্যভাণ্ডার তৈরি ও তথ্য-বিশ্লেষণের কাজে ব্যবহৃত হবে।
     </div>
     <span class="multi-hint">⚠️ লাল চিহ্নিত প্রশ্নে একাধিক উত্তর বেছে নেওয়া যাবে</span>
-    <span class="multi-hint">  যোগাযোগ নাম্বার: +91 80164 40930</span>
+    <span class="multi-hint"> যোগাযোগ - রোকেয়া 8016440930 (ফোন ও হোয়াটসঅ্যাপ)</span>
 
     <div class="consent-row">
       <button class="consent-btn" id="btnYes" onclick="setConsent(true)">✅ ইচ্ছুক — সমীক্ষায় অংশ নেব</button>
@@ -519,7 +519,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q5 Parent status -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৫.</span> দুর্ভাগ্যবশত, যদি তোমার বাবা বা মা কেউ গত হয়েছেন বা চলে গেছেন</label>
+      <label class="q-label"><span class="q-num">৫.</span> দুর্ভাগ্যবশত, যদি তোমার বাবা বা মা কেউ গত হয়েছেন / চলে গেছেন</label>
       <div class="options-list">
         <label class="opt-item"><input type="radio" name="parent_status" value="দুজনেই বেঁচে আছেন" onchange="toggleSubfield('fatherYear', false); toggleSubfield('motherYear', false); toggleSubfield('bothYears', false)"> না, দুজনেই বেঁচে আছেন</label>
         <label class="opt-item">
@@ -538,11 +538,11 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
         </label>
         <label class="opt-item">
           <input type="radio" name="parent_status" value="দুজনেই গত হয়েছেন" onchange="toggleSubfield('bothYears', true); toggleSubfield('fatherYear', false); toggleSubfield('motherYear', false)">
-          বাবা ও মা দুজনেই গত হয়েছেন
+          বাবা ও মা দুজনেই গত হয়েছেন / চলে গেছেন
           <div class="opt-subfield" id="bothYears">
-            বাবা গত হয়েছেন সালে: <input type="number" name="father_year_both" min="1960" max="2026" placeholder="বছর" style="width:110px;">
+            বাবা যে সালে - <input type="number" name="father_year_both" min="1960" max="2026" placeholder="বছর" style="width:110px;">
             <div style="margin-top:8px;">
-              মা গত হয়েছেন সালে: <input type="number" name="mother_year_both" min="1960" max="2026" placeholder="বছর" style="width:110px;">
+              মা যে সালে - <input type="number" name="mother_year_both" min="1960" max="2026" placeholder="বছর" style="width:110px;">
             </div>
           </div>
         </label>
@@ -625,10 +625,10 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
     <div class="q-card">
       <label class="q-label"><span class="q-num">১২.</span> তোমার মাধ্যমিকের রেজাল্ট অনুযায়ী স্কুলে তোমার স্থান</label>
       <div class="options-list inline">
-        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="1st"> ১ম</label>
-        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="2nd"> ২য়</label>
-        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="3rd"> ৩য়</label>
-        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="4th or below"> ৪র্থ বা নীচে</label>
+        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="১ম"> ১ম</label>
+        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="২য়"> ২য়</label>
+        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="৩য়"> ৩য়</label>
+        <label class="opt-item"><input type="radio" name="madhyamik_rank" value="৪র্থ বা নীচে"> ৪র্থ বা নীচে</label>
       </div>
     </div>
 
@@ -640,8 +640,8 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q13 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">১৩.</span> তোমার উচ্চমাধ্যমিক পাশের বছর হল / হবে<span class="required-star">*</span></label>
-      <input type="number" name="hs_year" min="2005" max="2035" placeholder="যেমন: 2024" style="max-width:150px;" required>
+      <label class="q-label"><span class="q-num">১৩.</span> তোমার উচ্চমাধ্যমিক পাশের বছর হল / হবে</label>
+      <input type="number" name="hs_year" min="2005" max="2035" placeholder="যেমন: 2024" style="max-width:150px;">
     </div>
 
     <!-- Q14 -->
@@ -658,12 +658,12 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
     <div class="q-card">
       <label class="q-label"><span class="q-num">১৫.</span> উচ্চমাধ্যমিক পড়াকালীন তুমি কোথায় থাকতে / থাকো?</label>
       <div class="options-list">
-        <label class="opt-item"><input type="radio" name="hs_stay"> নিজের বাড়িতে</label>
-        <label class="opt-item"><input type="radio" name="hs_stay"> সরকারি / স্কুল হোস্টেলে</label>
-        <label class="opt-item"><input type="radio" name="hs_stay"> আত্মীয়ের বাড়িতে</label>
-        <label class="opt-item"><input type="radio" name="hs_stay"> বেসরকারি মেসে</label>
-        <label class="opt-item"><input type="radio" name="hs_stay"> শিক্ষকের কোচিং কাম মেসে</label>
-        <label class="opt-item"><input type="radio" name="hs_stay"> অন্য কোন জায়গায়</label>
+        <label class="opt-item"><input type="radio" name="hs_stay" value="নিজের বাড়িতে"> নিজের বাড়িতে</label>
+        <label class="opt-item"><input type="radio" name="hs_stay" value="সরকারি / স্কুল হোস্টেলে"> সরকারি / স্কুল হোস্টেলে</label>
+        <label class="opt-item"><input type="radio" name="hs_stay" value="আত্মীয়ের বাড়িতে"> আত্মীয়ের বাড়িতে</label>
+        <label class="opt-item"><input type="radio" name="hs_stay" value="বেসরকারি মেসে"> বেসরকারি মেসে</label>
+        <label class="opt-item"><input type="radio" name="hs_stay" value="শিক্ষকের কোচিং কাম মেসে"> শিক্ষকের কোচিং কাম মেসে</label>
+        <label class="opt-item"><input type="radio" name="hs_stay" value="অন্য কোন জায়গায়"> অন্য কোন জায়গায়</label>
       </div>
     </div>
 
@@ -671,9 +671,9 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
     <div class="q-card">
       <label class="q-label"><span class="q-num">১৬.</span> উচ্চমাধ্যমিকে তোমার রেজাল্ট</label>
       <div class="options-list">
-        <label class="opt-item"><input type="radio" name="hs_result_status" value="not_given" onchange="toggleSubfield('hsMarksSection', false)"> তুমি এখনও উচ্চমাধ্যমিক দাও নি</label>
+        <label class="opt-item"><input type="radio" name="hs_result_status" value="তুমি এখনও উচ্চমাধ্যমিক দাও নি" onchange="toggleSubfield('hsMarksSection', false)"> তুমি এখনও উচ্চমাধ্যমিক দাও নি</label>
         <label class="opt-item">
-          <input type="radio" name="hs_result_status" value="passed" onchange="toggleSubfield('hsMarksSection', true)">
+          <input type="radio" name="hs_result_status" value="পাশ করে গেছো" onchange="toggleSubfield('hsMarksSection', true)">
           পাশ করে গেছো
           <div class="opt-subfield" id="hsMarksSection">
             <div class="input-row-3" style="margin-top:8px;">
@@ -740,9 +740,9 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
     <div class="q-card">
       <label class="q-label"><span class="q-num">১৯.</span> উচ্চমাধ্যমিকের পর কোন পরীক্ষা একাধিক বার দিয়েছিলে/দেবে?</label>
       <div class="options-list">
-        <label class="opt-item"><input type="radio" name="q19" value="none"> কোন পরীক্ষাই একাধিক বার দিই নি / দেব না</label>
+        <label class="opt-item"><input type="radio" name="q19" value="কোন পরীক্ষাই একাধিক বার দিই নি / দেব না"> কোন পরীক্ষাই একাধিক বার দিই নি / দেব না</label>
         <label class="opt-item">
-          <input type="radio" name="q19" value="yes" onchange="toggleSubfield('q19Names', true)">
+          <input type="radio" name="q19" value="দিয়েছি / দেব" onchange="toggleSubfield('q19Names', true)">
           দিয়েছি / দেব
           <div class="opt-subfield" id="q19Names">
             পরীক্ষার নামগুলি লেখো: <input type="text" name="repeat_exams" placeholder="যেমন: NEET, WBJEE">
@@ -779,17 +779,17 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
     <div class="q-card">
       <label class="q-label"><span class="q-num">২১.</span> উচ্চমাধ্যমিক পড়াকালীন তোমার পরিবারের মাসিক আয় মোটামুটি</label>
       <div class="options-list">
-        <label class="opt-item"><input type="radio" name="monthly_income" value="<10000"> Rs. ১০,০০০-র কম</label>
-        <label class="opt-item"><input type="radio" name="monthly_income" value="10000-15000"> Rs. ১০,০০০ থেকে ১৫,০০০-র মধ্যে</label>
-        <label class="opt-item"><input type="radio" name="monthly_income" value="15000-20000"> Rs. ১৫,০০০ থেকে ২০,০০০-র মধ্যে</label>
-        <label class="opt-item"><input type="radio" name="monthly_income" value="20000-25000"> Rs. ২০,০০০ থেকে ২৫,০০০-র মধ্যে</label>
-        <label class="opt-item"><input type="radio" name="monthly_income" value=">25000"> Rs. ২৫,০০০-র বেশী</label>
+        <label class="opt-item"><input type="radio" name="monthly_income" value="Rs. ১০,০০০-র কম"> Rs. ১০,০০০-র কম</label>
+        <label class="opt-item"><input type="radio" name="monthly_income" value="Rs. ১০,০০০ থেকে ১৫,০০০-র মধ্যে"> Rs. ১০,০০০ থেকে ১৫,০০০-র মধ্যে</label>
+        <label class="opt-item"><input type="radio" name="monthly_income" value="Rs. ১৫,০০০ থেকে ২০,০০০-র মধ্যে"> Rs. ১৫,০০০ থেকে ২০,০০০-র মধ্যে</label>
+        <label class="opt-item"><input type="radio" name="monthly_income" value="Rs. ২০,০০০ থেকে ২৫,০০০-র মধ্যে"> Rs. ২০,০০০ থেকে ২৫,০০০-র মধ্যে</label>
+        <label class="opt-item"><input type="radio" name="monthly_income" value="Rs. ২৫,০০০-র বেশী"> Rs. ২৫,০০০-র বেশী</label>
       </div>
     </div>
 
     <!-- Q22 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২২.</span> উচ্চমাধ্যমিকে নিজ পরিবারের বাইরে থেকে কোনো আর্থিক সহায়তা পেয়েছিলে?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
+      <label class="q-label"><span class="q-num">২২.</span> উচ্চমাধ্যমিকে নিজ পরিবারের বাইরে থেকে কোনো আর্থিক সহায়তা পেয়েছিলে  / পাচ্ছো ?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="hs_aid" value="কিছুই পাই নি"> না, কিছুই পাই নি</label>
         <label class="opt-item"><input type="checkbox" name="hs_aid" value="IVEST নিয়মিত স্কলারশিপ"> হ্যাঁ, আমি IVEST থেকে নিয়মিত স্কলারশিপ পেয়েছি</label>
@@ -805,7 +805,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q23 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৩.</span> উচ্চমাধ্যমিকের পরে, উচ্চতর পড়াশোনার জন্য অন্য কোনো আর্থিক সহায়তা পেয়েছ / পাচ্ছ কি?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
+      <label class="q-label"><span class="q-num">২৩.</span> উচ্চমাধ্যমিকের পরে, উচ্চতর পড়াশোনার জন্য অন্য কোনো আর্থিক সহায়তা পেয়েছো / পাচ্ছো কি?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="higher_aid" value="কিছুই না"> না, কিছুই না</label>
         <label class="opt-item"><input type="checkbox" name="higher_aid" value="IVEST নিয়মিত স্কলারশিপ"> হ্যাঁ, আমি IVEST থেকে নিয়মিত স্কলারশিপ পেয়েছি / পাচ্ছি</label>
@@ -827,7 +827,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q24 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৪.</span> উচ্চমাধ্যমিক চলাকালীন স্কুল শিক্ষকদের কাছ থেকে কতটা সহায়তা পেয়েছিলে?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
+      <label class="q-label"><span class="q-num">২৪.</span> উচ্চমাধ্যমিক চলাকালীন স্কুল শিক্ষকদের কাছ থেকে কতটা সহায়তা পেয়েছিলে  / পাচ্ছো ?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="teacher_support" value="ক্লাসের পড়ানো যথেষ্ট ছিল"> অধিকাংশ বিষয়ের জন্য ক্লাসের পড়ানোই যথেষ্ট ছিল</label>
         <label class="opt-item"><input type="checkbox" name="teacher_support" value="ক্লাস যথেষ্ট ছিল না"> অধিকাংশ বিষয়ের জন্য ক্লাসের পড়ানো যথেষ্ট ছিল না</label>
@@ -840,19 +840,19 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q25 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৫.</span> উচ্চমাধ্যমিক চলাকালীন কতটি বিষয়ের জন্য প্রাইভেট টুইশন নিয়েছিলে?</label>
+      <label class="q-label"><span class="q-num">২৫.</span> উচ্চমাধ্যমিক চলাকালীন কতটি বিষয়ের জন্য প্রাইভেট টুইশন নিয়েছিলে / নিচ্ছো</label>
       <div class="options-list inline">
-        <label class="opt-item"><input type="radio" name="tuition_count"> একটিও নয়</label>
-        <label class="opt-item"><input type="radio" name="tuition_count"> ১–২ টি</label>
-        <label class="opt-item"><input type="radio" name="tuition_count"> ৩–৪ টি</label>
-        <label class="opt-item"><input type="radio" name="tuition_count"> ৪–৫ টি</label>
-        <label class="opt-item"><input type="radio" name="tuition_count"> ৫ টির বেশি</label>
+        <label class="opt-item"><input type="radio" name="tuition_count" value="একটিও নয়"> একটিও নয়</label>
+        <label class="opt-item"><input type="radio" name="tuition_count" value="১–২ টি"> ১–২ টি</label>
+        <label class="opt-item"><input type="radio" name="tuition_count" value="৩–৪ টি"> ৩–৪ টি</label>
+        <label class="opt-item"><input type="radio" name="tuition_count" value="৪–৫ টি"> ৪–৫ টি</label>
+        <label class="opt-item"><input type="radio" name="tuition_count" value="৫ টির বেশি"> ৫ টির বেশি</label>
       </div>
     </div>
 
     <!-- Q26 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৬.</span> প্রাইভেট টুইশন কোথায় কোথায় থেকে নিয়েছিলে?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
+      <label class="q-label"><span class="q-num">২৬.</span> প্রাইভেট টুইশন কোথায় কোথায় থেকে নিয়েছিলে / নিচ্ছো ?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item"><input type="checkbox" name="tuition_src" value="স্থানীয় কোচিং-ব্যক্তিগত শিক্ষক"> স্থানীয় কোচিং সেন্টার / ব্যক্তিগত শিক্ষকের বাড়ি</label>
         <label class="opt-item"><input type="checkbox" name="tuition_src" value="স্কুল শিক্ষকের মেস কোচিং"> স্কুল শিক্ষকদের পরিচালিত মেস-সহ কোচিং সেন্টার</label>
@@ -871,11 +871,11 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q27 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৭.</span> এখন তুমি কি করছ?</label>
+      <label class="q-label"><span class="q-num">২৭.</span> বর্তমানে তুমি কি করছ? <span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
       <div class="options-list">
         <label class="opt-item">
-          <input type="radio" name="current_status" value="hs_studying" onchange="toggleSubfield('hsClassSection', true); toggleSubfield('higherEduSection', false);">
-          উচ্চমাধ্যমিকে পড়ছি
+          <input type="checkbox" name="current_status" value="উচ্চ মাধ্যমিকে পড়ছি" onchange="toggleSubfield('hsClassSection', this.checked)">
+          উচ্চ মাধ্যমিকে পড়ছি 
           <div class="opt-subfield" id="hsClassSection">
             <div class="options-list inline" style="margin-top:4px;">
               <label class="opt-item"><input type="radio" name="hs_class" value="11"> এগারো ক্লাস</label>
@@ -884,7 +884,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
           </div>
         </label>
         <label class="opt-item">
-          <input type="radio" name="current_status" value="higher_education" onchange="toggleSubfield('higherEduSection', true); toggleSubfield('hsClassSection', false);">
+          <input type="checkbox" name="current_status" value="উচ্চতর পড়াশোনা করছি" onchange="toggleSubfield('higherEduSection', this.checked)">
           উচ্চতর পড়াশোনা করছি
           <div class="opt-subfield" id="higherEduSection">
             <div class="input-row" style="margin-top:8px;">
@@ -899,27 +899,32 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
             <div class="sub-group"><span class="sub-label">Institute location</span><input type="text" name="institute_location"></div>
           </div>
         </label>
+        <label class="opt-item">
+          <input type="checkbox" name="current_status" value="বাড়ির চাষবাস/ অন্য কাজে সাহায্য করছি">
+          বাড়ির চাষবাস/ অন্য কাজে সাহায্য করছি
+        </label>
+        <label class="opt-item">
+          <input type="checkbox" name="current_status" value="নীচের competitive পরীক্ষা দিচ্ছি" onchange="toggleSubfield('compPrepSection', this.checked)">
+          নীচের competitive পরীক্ষা দিচ্ছি
+          <div class="opt-subfield" id="compPrepSection">
+            <div class="options-list" style="margin-top:8px;">
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="NEET"> NEET</label>
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="WBJEE"> WBJEE</label>
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="JEE-MAINS"> JEE-MAINS</label>
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="Professional courses"> Other professional courses (nursing/paramedical/etc.)</label>
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="UPSC/WBPSC"> UPSC / WBPSC exams</label>
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="Defense"> Defense entrances</label>
+              <label class="opt-item"><input type="checkbox" name="prep_exam" value="Something else"> Something else</label>
+            </div>
+          </div>
+        </label>
       </div>
     </div>
 
-    <!-- Q28 -->
-    <div class="q-card">
-      <label class="q-label"><span class="q-num">২৮.</span> তুমি কি নীচের কম্পিটিটিভ পরীক্ষার জন্য প্রস্তুতি নিচ্ছ?<span class="multi-tag">একাধিক উত্তর হতে পারে</span></label>
-      <div class="options-list">
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="NEET"> NEET</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="WBJEE"> WBJEE</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="JEE-MAINS"> JEE-MAINS</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="Professional courses"> Other professional courses (nursing/paramedical/etc.)</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="UPSC/WBPSC"> UPSC / WBPSC exams</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="Defense"> Defense entrances</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="Something else"> Something else</label>
-        <label class="opt-item"><input type="checkbox" name="prep_exam" value="None"> নিচ্ছি না</label>
-      </div>
-    </div>
 
-    <!-- Q29 Employment -->
+    <!-- Q28 Employment -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৯.</span> তুমি কি এখন নিজে রোজগার করছো?</label>
+      <label class="q-label"><span class="q-num">২৮.</span> তুমি কি এখন নিজে রোজগার করছো?</label>
       <div class="options-list">
         <label class="opt-item"><input type="radio" name="employed" value="না" onchange="toggleSubfield('jobSection', false); toggleSubfield('bizSection', false)"> না</label>
         <label class="opt-item">
@@ -930,16 +935,16 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
               <div class="sub-group"><span class="sub-label">Sector</span>
                 <select name="job_sector">
                   <option value="">বেছে নাও</option>
-                  <option>Government sector</option>
-                  <option>Private sector</option>
+                  <option value="সরকারি সেক্টর">Government sector</option>
+                  <option value="বেসরকারি সেক্টর">Private sector</option>
                 </select>
               </div>
               <div class="sub-group"><span class="sub-label">Employment type</span>
                 <select name="job_type">
                   <option value="">বেছে নাও</option>
-                  <option>Permanent</option>
-                  <option>Contractual</option>
-                  <option>Casual</option>
+                  <option value="স্থায়ী (Permanent)">Permanent</option>
+                  <option value="চুক্তিভিত্তিক (Contractual)">Contractual</option>
+                  <option value="ক্যাজুয়াল (Casual)">Casual</option>
                 </select>
               </div>
             </div>
@@ -976,9 +981,9 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
       </div>
     </div>
 
-    <!-- Q30 Dream -->
+    <!-- Q29 Dream -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৩০.</span> তোমার ভবিষ্যত জীবনের জন্য স্বপ্ন কি? <span style="font-weight:300; font-size:12.5px;">(৫০ শব্দের মধ্যে)</span></label>
+      <label class="q-label"><span class="q-num">২৯.</span> তোমার আরও অন্য কিছু (যেমন, তোমার পরবর্তী পরিকল্পনা, বা IVEST-র আরও কি করলে তোমাদের বেশী উপকার হবে, তোমরা ভবিষ্যতে IVEST পরিচালনায় অংশ নিতে চাও কি না, - ইত্যাদি) জানাবার থাকলে, এখানে অনধিক ১০০ শব্দের মধ্যে লেখো। <span style="font-weight:300; font-size:12.5px;">(১০০ শব্দের মধ্যে)</span></label>
       <textarea name="dream" rows="4" maxlength="500" placeholder="তোমার স্বপ্নের কথা সংক্ষেপে লেখো..."></textarea>
     </div>
 
@@ -1001,7 +1006,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
 <script>
   // ── CONFIG ── Replace with your Apps Script Web App URL after deployment
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxldX25MdjvL_aXzjdL9tBgYKwOAwNpj-Qf7eykL1JihYpfUORoM8MkTjuzV2MGEHw7ug/exec";
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzq27XEB1Qkz-QKTQYFG_3O9_L2E9IUxDrz17SWGr9faH59wc_bMlzZIc9k725WKcASA/exec";
 
   // Consent
   function setConsent(yes) {
