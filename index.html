@@ -235,8 +235,6 @@
     vertical-align: middle;
     margin-left: 6px;
   }
-  .required-star { color: #c00; margin-left: 3px; }
-
   /* TEXT INPUT */
   input[type="text"],
   input[type="number"],
@@ -448,7 +446,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
     <div class="privacy-note">
       🔒 তোমাদের দেওয়া প্রতিটি তথ্য IVEST-র কাছে সুরক্ষিত থাকবে, এবং শুধুমাত্র IVEST-র তথ্যভাণ্ডার তৈরি ও তথ্য-বিশ্লেষণের কাজে ব্যবহৃত হবে।
     </div>
-    <span class="multi-hint">⚠️ লাল চিহ্নিত প্রশ্নে একাধিক উত্তর বেছে নেওয়া যাবে</span>
+    <span class="multi-hint">সমীক্ষার জন্য প্রতিটি প্রশ্নের উত্তরই গুরুত্বপূর্ণ</span>
     <span class="multi-hint"> যোগাযোগ - রোকেয়া 8016440930 (ফোন ও হোয়াটসঅ্যাপ)</span>
 
     <div class="consent-row">
@@ -465,8 +463,6 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
 <!-- FORM -->
 <div class="form-wrap" id="formWrap">
-  <div class="error-banner" id="errorBanner">অনুগ্রহ করে সমস্ত প্রয়োজনীয় প্রশ্নের উত্তর দাও।</div>
-
   <form id="ivestForm" novalidate>
 
     <!-- SECTION A: Personal Info -->
@@ -477,24 +473,24 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q1 Name -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">১.</span> আমার নাম<span class="required-star">*</span></label>
-      <input type="text" name="name" placeholder="তোমার পুরো নাম লেখো" required>
+      <label class="q-label"><span class="q-num">১.</span> আমার নাম</label>
+      <input type="text" name="name" placeholder="তোমার পুরো নাম লেখো">
     </div>
 
     <!-- Q2 Gender -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২.</span> আমি<span class="required-star">*</span></label>
+      <label class="q-label"><span class="q-num">২.</span> আমি</label>
       <div class="options-list inline">
-        <label class="opt-item"><input type="radio" name="gender" value="মহিলা" required> মহিলা</label>
+        <label class="opt-item"><input type="radio" name="gender" value="মহিলা"> মহিলা</label>
         <label class="opt-item"><input type="radio" name="gender" value="পুরুষ"> পুরুষ</label>
       </div>
     </div>
 
     <!-- Q3 Marital Status -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৩.</span> আমি এখন<span class="required-star">*</span></label>
+      <label class="q-label"><span class="q-num">৩.</span> আমি এখন</label>
       <div class="options-list">
-        <label class="opt-item"><input type="radio" name="marital" value="অবিবাহিত" required> অবিবাহিত</label>
+        <label class="opt-item"><input type="radio" name="marital" value="অবিবাহিত"> অবিবাহিত</label>
         <label class="opt-item" id="marriedOpt">
           <input type="radio" name="marital" value="বিবাহিত" onchange="toggleSubfield('marriedYear', true)">
           বিবাহিত
@@ -507,9 +503,9 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q4 Family size -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৪.</span> তোমার পরিবারের এখন সদস্য সংখ্যা<span class="required-star">*</span></label>
+      <label class="q-label"><span class="q-num">৪.</span> তোমার পরিবারের এখন সদস্য সংখ্যা</label>
       <div class="options-list inline">
-        <label class="opt-item"><input type="radio" name="family_size" value="2" required> ২</label>
+        <label class="opt-item"><input type="radio" name="family_size" value="2"> ২</label>
         <label class="opt-item"><input type="radio" name="family_size" value="3"> ৩</label>
         <label class="opt-item"><input type="radio" name="family_size" value="4"> ৪</label>
         <label class="opt-item"><input type="radio" name="family_size" value="5"> ৫</label>
@@ -551,9 +547,9 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q6 Category -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৬.</span> তোমার সংরক্ষণ ক্যাটেগরি<span class="required-star">*</span></label>
+      <label class="q-label"><span class="q-num">৬.</span> তোমার সংরক্ষণ ক্যাটেগরি</label>
       <div class="options-list inline">
-        <label class="opt-item"><input type="radio" name="category" value="General" required> General</label>
+        <label class="opt-item"><input type="radio" name="category" value="General"> General</label>
         <label class="opt-item"><input type="radio" name="category" value="SC"> SC</label>
         <label class="opt-item"><input type="radio" name="category" value="ST"> ST</label>
         <label class="opt-item"><input type="radio" name="category" value="OBC-A"> OBC-A</label>
@@ -564,29 +560,29 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q7 DOB -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৭.</span> তোমার জন্ম তারিখ<span class="required-star">*</span></label>
+      <label class="q-label"><span class="q-num">৭.</span> তোমার জন্ম তারিখ</label>
       <div class="input-row-3" id="dob_wrap" style="max-width: 450px;">
-        <select class="d-day" name="dob_day" required><option value="">দিন</option></select>
-        <select class="d-month" name="dob_month" required><option value="">মাস</option></select>
-        <select class="d-year" name="dob_year" required><option value="">বছর</option></select>
+        <select class="d-day" name="dob_day"><option value="">দিন</option></select>
+        <select class="d-month" name="dob_month"><option value="">মাস</option></select>
+        <select class="d-year" name="dob_year"><option value="">বছর</option></select>
       </div>
       <input type="hidden" name="dob" id="dob_hidden">
     </div>
 
     <!-- Q8 Address -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৮.</span> ঠিকানা<span class="required-star">*</span></label>
-      <div class="sub-group"><span class="sub-label">অঞ্চল বা পাড়ার নাম</span><input type="text" name="area" required></div>
+      <label class="q-label"><span class="q-num">৮.</span> ঠিকানা</label>
+      <div class="sub-group"><span class="sub-label">অঞ্চল বা পাড়ার নাম</span><input type="text" name="area"></div>
       <div class="input-row">
-        <div class="sub-group"><span class="sub-label">গ্রাম / শহরের নাম</span><input type="text" name="village_town" required></div>
-        <div class="sub-group"><span class="sub-label">জেলা</span><input type="text" name="district" required></div>
+        <div class="sub-group"><span class="sub-label">গ্রাম / শহরের নাম</span><input type="text" name="village_town"></div>
+        <div class="sub-group"><span class="sub-label">জেলা</span><input type="text" name="district"></div>
       </div>
       <div class="input-row">
         <div class="sub-group"><span class="sub-label">রাজ্য</span><input type="text" name="state" value="পশ্চিমবঙ্গ"></div>
         <div class="sub-group"><span class="sub-label">PIN</span><input type="number" name="pin" maxlength="6" placeholder="৬ সংখ্যার পিন"></div>
       </div>
       <div class="input-row">
-        <div class="sub-group"><span class="sub-label">Contact Phone No.</span><input type="tel" name="phone" required placeholder="+91 XXXXXXXXXX"></div>
+        <div class="sub-group"><span class="sub-label">Contact Phone No.</span><input type="tel" name="phone" placeholder="+91 XXXXXXXXXX"></div>
         <div class="sub-group"><span class="sub-label">WhatsApp No.</span><input type="tel" name="whatsapp" placeholder="+91 XXXXXXXXXX"></div>
       </div>
     </div>
@@ -599,8 +595,8 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q9 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">৯.</span> তোমার মাধ্যমিক পাশের বছর<span class="required-star">*</span></label>
-      <input type="number" name="madhyamik_year" min="2005" max="2030" placeholder="যেমন: 2022" style="max-width:150px;" required>
+      <label class="q-label"><span class="q-num">৯.</span> তোমার মাধ্যমিক পাশের বছর</label>
+      <input type="number" name="madhyamik_year" min="2005" max="2030" placeholder="যেমন: 2022" style="max-width:150px;">
     </div>
 
     <!-- Q10 -->
@@ -608,15 +604,15 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
       <label class="q-label"><span class="q-num">১০.</span> তোমার মাধ্যমিক স্কুল</label>
       <div class="input-row">
         <div class="sub-group"><span class="sub-label">স্কুলের নাম</span><input type="text" name="madhyamik_school"></div>
-        <div class="sub-group"><span class="sub-label">কোন অঞ্চলে</span><input type="text" name="madhyamik_school_area"></div>
+        <div class="sub-group"><span class="sub-label">কোন অঞ্চলে: গ্রাম/শহরের নাম, জেলা</span><input type="text" name="madhyamik_school_area"></div>
       </div>
     </div>
 
     <!-- Q11 -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">১১.</span> তুমি মাধ্যমিকে সর্বমোট (শতকরা) কত পেয়েছ<span class="required-star">*</span></label>
+      <label class="q-label"><span class="q-num">১১.</span> তুমি মাধ্যমিকে সর্বমোট (শতকরা) কত পেয়েছ</label>
       <div style="display:flex; align-items:center; gap:8px;">
-        <input type="number" name="madhyamik_pct" min="0" max="100" step="0.01" placeholder="যেমন: 82.5" style="max-width:140px;" required>
+        <input type="number" name="madhyamik_pct" min="0" max="100" step="0.01" placeholder="যেমন: 82.5" style="max-width:140px;">
         <span>%</span>
       </div>
     </div>
@@ -649,8 +645,8 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
       <label class="q-label"><span class="q-num">১৪.</span> তোমার উচ্চমাধ্যমিক স্কুল</label>
       <div class="sub-group"><span class="sub-label">স্কুলের নাম</span><input type="text" name="hs_school"></div>
       <div class="input-row">
-        <div class="sub-group"><span class="sub-label">যে অঞ্চলে অবস্থিত</span><input type="text" name="hs_school_area"></div>
-        <div class="sub-group"><span class="sub-label">বাড়ি থেকে দূরত্ব (কিমি)</span><input type="number" name="hs_school_dist" min="0" step="0.1" placeholder="0.5"></div>
+        <div class="sub-group"><span class="sub-label">যে অঞ্চলে অবস্থিত - গ্রাম/শহরের নাম, জেলা</span><input type="text" name="hs_school_area"></div>
+        <div class="sub-group"><span class="sub-label">বাড়ি থেকে দূরত্ব (কিমি)</span><input type="number" name="hs_school_dist" min="0" step="0.1" placeholder="যেমন, ০.৫"></div>
       </div>
     </div>
 
@@ -983,8 +979,14 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
     <!-- Q29 Dream -->
     <div class="q-card">
-      <label class="q-label"><span class="q-num">২৯.</span> তোমার আরও অন্য কিছু (যেমন, তোমার পরবর্তী পরিকল্পনা, বা IVEST-র আরও কি করলে তোমাদের বেশী উপকার হবে, তোমরা ভবিষ্যতে IVEST পরিচালনায় অংশ নিতে চাও কি না, - ইত্যাদি) জানাবার থাকলে, এখানে অনধিক ১০০ শব্দের মধ্যে লেখো। <span style="font-weight:300; font-size:12.5px;">(১০০ শব্দের মধ্যে)</span></label>
-      <textarea name="dream" rows="4" maxlength="500" placeholder="তোমার স্বপ্নের কথা সংক্ষেপে লেখো..."></textarea>
+      <label class="q-label"><span class="q-num">২৯.</span> তোমার আরও অন্য কিছু (যেমন, তোমার পরবর্তী পরিকল্পনা, বা IVEST-র আরও কি করলে তোমাদের বেশী উপকার হবে, তোমরা ভবিষ্যতে IVEST পরিচালনায় অংশ নিতে চাও কি না, - ইত্যাদি) জানাবার থাকলে, এখানে অনধিক ৫০ শব্দের মধ্যে লেখো। <span style="font-weight:300; font-size:12.5px;"></span></label>
+      <textarea name="dream" rows="4" maxlength="500" placeholder=""></textarea>
+    </div>
+
+    <!-- Q30 Dream -->
+    <div class="q-card">
+      <label class="q-label"><span class="q-num">৩০.</span> তোমার স্বপ্ন কি নীচে লেখ (অনধিক ৫০ শব্দে)</label>
+      <textarea name="q30_dream" rows="4" maxlength="500" placeholder=""></textarea>
     </div>
 
     <!-- SUBMIT -->
@@ -1006,7 +1008,7 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
 <script>
   // ── CONFIG ── Replace with your Apps Script Web App URL after deployment
-  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyzq27XEB1Qkz-QKTQYFG_3O9_L2E9IUxDrz17SWGr9faH59wc_bMlzZIc9k725WKcASA/exec";
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzfcHtnFtdf3g7lK_CaleZ_UYXEhfD7SOrddtWIyBASxqsNEYpQ31A59H6xBWLPkYZpUw/exec";
 
   // Consent
   function setConsent(yes) {
@@ -1040,15 +1042,18 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
   // Progress
   function updateProgress() {
-    const inputs = document.querySelectorAll('#ivestForm input[required]');
-    let filled = 0;
-    inputs.forEach(i => {
-      if (i.type === 'radio' || i.type === 'checkbox') {
-        const group = document.querySelectorAll(`input[name="${i.name}"]:checked`);
-        if (group.length > 0) filled++;
-      } else if (i.value.trim()) filled++;
+    const form = document.getElementById('ivestForm');
+    const textFields = [...form.querySelectorAll('input[type="text"], input[type="number"], input[type="date"], input[type="tel"], textarea, select')]
+      .filter(el => el.name);
+    const groupNames = new Set([...form.querySelectorAll('input[type="radio"], input[type="checkbox"]')].map(el => el.name).filter(Boolean));
+    const total = textFields.length + groupNames.size;
+    let filled = textFields.filter(el => el.value.trim()).length;
+
+    groupNames.forEach(name => {
+      if (form.querySelector(`input[name="${name}"]:checked`)) filled++;
     });
-    const pct = inputs.length ? Math.round((filled / inputs.length) * 100) : 0;
+
+    const pct = total ? Math.round((filled / total) * 100) : 0;
     document.getElementById('progressFill').style.width = pct + '%';
     document.getElementById('progressLabel').textContent = pct + '% সম্পন্ন';
   }
@@ -1086,26 +1091,6 @@ IVEST। আশা করি, তোমরা প্রত্যেকে এই
 
   async function submitForm() {
     const btn = document.getElementById('submitBtn');
-
-    // Basic required validation
-    const required = document.querySelectorAll('#ivestForm input[required]');
-    let missing = false;
-    required.forEach(inp => {
-      if (inp.type === 'radio') {
-        if (!document.querySelector(`input[name="${inp.name}"]:checked`)) missing = true;
-      } else if (!inp.value.trim()) {
-        inp.style.borderColor = '#c00';
-        missing = true;
-      }
-    });
-
-    if (missing) {
-      const banner = document.getElementById('errorBanner2');
-      banner.style.display = 'block';
-      banner.textContent = 'অনুগ্রহ করে সমস্ত প্রয়োজনীয় (*) প্রশ্নের উত্তর দাও।';
-      banner.scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
 
     btn.disabled = true;
     btn.textContent = 'জমা হচ্ছে...';
